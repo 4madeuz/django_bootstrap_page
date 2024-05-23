@@ -88,6 +88,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "app.wsgi.application"
 
+THUMBNAIL_ALIASES = {
+    '': {
+        'desktop': {'size': (457, 457), 'crop': 'center'},
+        'thumbnail': {'size': (100, 100), 'crop': 'center'},
+        'mobile': {'size': (340, 340), 'crop': True},
+        'thumbnail-mobile': {'size': (80, 80), 'crop': True},
+    },
+}
 
 
 AUTH_PASSWORD_VALIDATORS = [

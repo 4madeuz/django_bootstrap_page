@@ -1,137 +1,137 @@
 <!DOCTYPE html>
 {% load static %}
+{% load thumbnail %}
 <html lang="ru">
-    <head>    
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>NASA</title>
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
-        <style>
-            body {
-                font-family: 'Montserrat', sans-serif;
-            }
-        </style>
-    </head>
-  <body>
-    <header>
-      {% include 'includes/header.html' %}     
-    </header>
-    <main>
-        <div class="container text-center">
-            <div class="row justify-content-md-center">
-                <div style="width: 752px;"  class="col-md-8 text-justify mt-4 mb-4">
-                    <h1 class="display-4 fw-bold text-body-emphasis mt-4 mb-4">Космическое агентство</h1>
-                    <p class="fs-6 text-body-secondary mt-4 mb-4">Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
-                </div>
-            </div>            
-            <div class="row mt-4 mb-4">
-                <div class="col-md-8">
-                    <div class="row">
-                    <div class="col-6 g-5">
-                        <div class="text-center">
-                        <img src="{% static 'img/rocket.png' %} ">
-                        <h5 class="fw-bold">Спейс шатлы - пилотируемые корабли</h5>
-                        </div>
-                    </div>
-                    <div class="col-6 g-5">
-                        <div class="text-center">
-                        <img src="{% static 'img/tele.png' %} ">
-                        <h5 class="fw-bold">Лучшее телескопическое оборудование</h5>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="row">  
-                    <div class="col-6 g-5">
-                        <div class="text-center">
-                            <img src="{% static 'img/moon.png' %} ">
-                        <h5 class="fw-bold">Целимся на Луну и Марс</h5>
-                        </div>
-                    </div>
-                    <div class="col-6 g-5">
-                        <div class="text-center">
-                        <img src="{% static 'img/medal.png' %} ">
-                        <h5 class="fw-bold">Золотая медаль по назначенным исследованиям</h5>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-4 g-2">
-                    <div class="text-center open-slider">
-                        <div><img src="{{ items.0.image.url }}" class="rounded mx-auto d-block" style="width: 457px; height: 457px"></div>
-                    </div>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NASA</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<header>
+    {% include 'includes/header.html' %}
+</header>
+<main>
+    <div class="container text-center">
+        <div class="row justify-content-md-center">
+            <div style="width: 752px;" class="col-md-8 text-justify mt-4 mb-4">
+                <h1 class="display-4 fw-bold text-body-emphasis mt-4 mb-4">Космическое агентство</h1>
+                <p class="fs-6 text-body-secondary mt-4 mb-4">Национальное управление по аэронавтике и исследованию космического пространства — ведомство, относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.</p>
             </div>
         </div>
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="wrap-modal-slider">
-                            <div class="slider-modal">
-                                {% for item in items %}
-                                    <div><img src="{{ item.image.url }}" class="rounded mx-auto d-block" style="width: 457px; height: 457px"></div>
-                                {% endfor %}
-                            </div>
-                            <div class="slider-modal-thumbnails">
-                                {% for item in items %}
-                                    <div><img src="{{ item.image.url }}" class="rounded mx-auto d-block" style="width: 100px; height: 100px"></div>
-                                {% endfor %}
-                            </div>
+        <div class="row mt-4 mb-4">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-6 g-5">
+                        <div class="text-center">
+                            <img src="{% static 'img/rocket.png' %}" style="width: 64px;" alt="Rocket">
+                            <h5>Спейс шатлы - пилотируемые корабли</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 g-5">
+                        <div class="text-center">
+                            <img src="{% static 'img/tele.png' %}" style="width: 64px;" alt="Telescope">
+                            <h5>Лучшее телескопическое оборудование</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 g-5">
+                        <div class="text-center">
+                            <img src="{% static 'img/moon.png' %}" style="width: 64px;" alt="Moon">
+                            <h5>Целимся на Луну и Марс</h5>
+                        </div>
+                    </div>
+                    <div class="col-6 g-5">
+                        <div class="text-center">
+                            <img src="{% static 'img/medal.png' %}" style="width: 64px;" alt="Medal">
+                            <h5>Золотая медаль по назначенным исследованиям</h5>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="col-4 g-2">
+                <div class="text-center d-flex open-slider">
+                    <div>
+                        <picture>
+                            <source media="(max-width: 480px)" srcset="{% thumbnail items.0.image 'mobile' %}" class="rounded mx-auto d-block" >
+                            <img src="{% thumbnail items.0.image 'desktop' %}" class="rounded mx-auto d-block" alt="Main Image">
+                        </picture>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript"   src="{% static 'slick/slick.min.js' %}"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                dots: true,
-                arrows: false
-            });
+    </div>
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="wrap-modal-slider">
+                        <div class="slider-modal">
+                            {% for item in items %}
+                                <div>
+                                    <picture>
+                                        <source media="(max-width: 480px)" srcset="{% thumbnail items.0.image 'mobile' %}" class="rounded mx-auto d-block" >
+                                        <img src="{% thumbnail items.0.image 'desktop' %}" class="rounded mx-auto d-block" alt="Image">
+                                    </picture>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="slider-modal-thumbnails">
+                            {% for item in items %}
+                                <div>
+                                    <picture>
+                                        <source media="(max-width: 480px)" srcset="{% thumbnail item.image 'thumbnail-mobile' %}" class="rounded mx-auto d-block" >
+                                        <img src="{% thumbnail item.image 'thumbnail' %}"  class="rounded mx-auto d-block" alt="Thumbnail">
+                                    </picture>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        $('.slider-modal').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            arrows: false,
+            asNavFor: '.slider-modal-thumbnails'
         });
-    </script>
-    <script>
-        $(document).ready(function(){
-            // Initialize main slider
-            $('.slider-modal').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                dots: true,
-                arrows: false,
-                asNavFor: '.slider-modal-thumbnails' // Link with thumbnails slider
-            });
 
-            // Initialize thumbnails slider
-            $('.slider-modal-thumbnails').slick({
-                slidesToShow: 3, // Show 3 thumbnails at a time
-                slidesToScroll: 1,
-                asNavFor: '.slider-modal', // Link with main slider
-                centerMode: true,
-                focusOnSelect: true,
-                arrows:true,
-            });
-
-            // Open modal
-            $('.open-slider').click(function(){
-                $('#imageModal').modal('show');
-            });
+        $('.slider-modal-thumbnails').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slider-modal',
+            centerMode: true,
+            focusOnSelect: true,
+            arrows: true,
         });
-    </script>
-    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
-  </body>
+
+        $('.open-slider').click(function(){
+            $('#imageModal').modal('show');
+        });
+    });
+</script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
 </html>
