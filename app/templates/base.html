@@ -81,8 +81,8 @@
                             {% for item in items %}
                                 <div>
                                     <picture>
-                                        <source media="(max-width: 480px)" srcset="{% thumbnail items.0.image 'mobile' %}" class="rounded mx-auto d-block" >
-                                        <img src="{% thumbnail items.0.image 'desktop' %}" class="rounded mx-auto d-block" alt="Image">
+                                        <source media="(max-width: 480px)" srcset="{% thumbnail items.image 'mobile' %}" class="rounded mx-auto d-block" >
+                                        <img src="{% thumbnail items.image 'desktop' %}" class="rounded mx-auto d-block" alt="Image">
                                     </picture>
                                 </div>
                             {% endfor %}
